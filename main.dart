@@ -1,125 +1,542 @@
 import 'package:flutter/material.dart';
-
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.pink[100],
+            toolbarHeight: 60,
+            title: Text('My Protfolio'),
+            centerTitle: true,
+          ),
+          drawer: drawer(),
+          body:
+          ListView(children: [
+            Row (
+                children: [
+                  SizedBox(width: 40,height: 100,),
+                  Icon(Icons.face_unlock_rounded,size: 30,color: Colors.grey,),
+                  SizedBox(width: 20,),
+                  Text('ABOUT ME' ,
+                    style: TextStyle(
+                      color: Colors.pink[100],
+                      fontSize: 25,
+                    ),
+                  ),
+                ] ),
+            Divider(
+              indent: 55.0,
+              endIndent: 170.0,
+              color: Colors.grey,
+            ),
+            Row(
+                children: [
+                  SizedBox(width: 55,),
+                  Container(
+                    color: Colors.grey,
+                    height: 70,
+                    width: 1,
+                  ),
+                  Text('''   My name is Abeer Al-Namaani. I completed my studies in
+  school and now I am studying my bachelor’s degree at the
+  University of Science and Technology in the field of 
+  information technology.''' ,
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                  ),
+                  // ),
+                ] ),
+            Row(
+              children: [
+                SizedBox(width: 40,height: 100,),
+                Icon(Icons.note_alt_outlined,size: 30,color: Colors.grey,),
+                SizedBox(width: 20,),
+                Text('EDUCATION' ,
+                  style: TextStyle(
+                    color: Colors.pink[100],
+                    fontSize: 25,
+                  ),
+                ),
+              ],
+            ),
+            Divider(
+              indent: 55.0,
+              endIndent: 170.0,
+              color: Colors.grey,
+            ),
+            Row(
+              children: [
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                  SizedBox(width: 110,height: 10,),
+                  dot (),
+                      line (),
+                      dot (),
+                      line (),
+                      dot (),
+                    ]   ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 15,),
+                    Row(
+                      children: [
+                          Text('2006-2017' ,
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15,
+                            ),
+                          ),
+                        SizedBox(width: 20,),
+                        Text('At school' ,
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 15,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      children: [
+                          Text('2019-2020' ,
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15,
+                            ),
+                          ),
+                        SizedBox(width: 20,),
+                        Text('At the Institute' ,
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 15,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 25,),
+                    Row(
+                      children: [
+                        Text('2021-now' ,
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 15,
+                          ),
+                        ),
+                        SizedBox(width: 25,),
+                        Text('in the University' ,
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 15,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                SizedBox(width: 40, height: 100,),
+                Icon(Icons.ad_units, size: 30, color: Colors.grey,),
+                SizedBox(width: 20,),
+                Text('SKILS AND EXPERTIZE',
+                  style: TextStyle(color: Colors.pink[100], fontSize: 25),)
+              ],
+            ), Divider(
+              indent: 55.0,
+              endIndent: 170.0,
+              color: Colors.grey,
+
+            ),
+            Row(
+              children: [
+                SizedBox(width: 55,),
+                line (),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("  photoshop         ", style: TextStyle(
+                    color: Colors.grey, fontSize: 15,)),
+                ),
+                fullCircll(),
+                fullCircll(),
+                fullCircll(),
+                imptyCircll(),
+                imptyCircll(),
+              ],
+            ), Row(
+              children: [
+                SizedBox(width: 55,),
+                line (),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(" MS.ECXAL          ", style: TextStyle(
+                    color: Colors.grey, fontSize: 15,)),
+                ),
+                fullCircll(),
+                fullCircll(),
+                imptyCircll(),
+                imptyCircll(),
+                imptyCircll()
+              ],
+            ), Row(
+              children: [
+                SizedBox(width: 55,),
+                line (),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(" MS.WORD           ", style: TextStyle(
+                    color: Colors.grey, fontSize: 15,)),
+                ),
+                fullCircll(),
+                fullCircll(),
+                fullCircll(),
+                imptyCircll(),
+                imptyCircll(),
+              ],
+
+            ), Row(
+              children: [
+                SizedBox(width: 55,),
+                line (),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(" Flexibity               ", style: TextStyle(
+                    color: Colors.grey, fontSize: 15,)),
+
+                ),
+                fullCircll(),
+                fullCircll(),
+                fullCircll(),
+                fullCircll(),
+                imptyCircll(),
+              ],
+
+            ),
+            Row(
+              children: [
+                SizedBox(width: 40, height: 100,),
+                Icon(Icons.backup_table_rounded, size: 30, color: Colors.grey,),
+                SizedBox(width: 20,),
+                Text('EXPERIENCE',
+                  style: TextStyle(color: Colors.pink[100], fontSize: 25),)
+              ],
+            ),
+            Divider(
+              indent: 55.0,
+              endIndent: 170.0,
+              color: Colors.grey,
+            ),
+            Row(
+              children: [
+                Column(
+                    children: [
+                      SizedBox(width: 110,),
+
+                      dot (),
+                      line (),
+                      dot (),
+                    ]
+                ),
+                Column(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child:
+                          Text('2020-2021', style: TextStyle(
+                              color: Colors.grey, fontSize: 15),),
+                        ),
+                        SizedBox(width: 20,),
+                        Text('Mastering English language', style: TextStyle(
+                            color: Colors.grey, fontSize: 15),),
+                        SizedBox(width: 15,),
+                      ],
+                    ), Row(
+                      children: [
+                        SizedBox(height: 20,),
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child:
+                          Text('2022_2023', style: TextStyle(
+                              color: Colors.grey, fontSize: 15),),
+                        ),
+                        SizedBox(width: 20,),
+                        Text('Mastering Computer Courses', style: TextStyle(
+                            color: Colors.grey, fontSize: 15),)
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                SizedBox(width: 40, height: 100,),
+                Icon(Icons.photo, size: 30, color: Colors.grey,),
+                SizedBox(width: 20,),
+                Text('My project',
+                  style: TextStyle(color: Colors.pink[100], fontSize: 25),)
+              ],
+            ), Divider(
+              indent: 55.0,
+              endIndent: 170.0,
+              color: Colors.grey,
+            ),
+            SizedBox(height: 20,),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+            Container(
+                  width: 150,
+                  height: 150,
+                  child: Image(
+                    image:AssetImage('images/1.PNG'),
+                  ),
+                  decoration: BoxDecoration(
+                    border :Border.all(
+                      width: 2,
+                      color: Colors.grey,
+                    )
+                  ),
+                ),
+              Container(
+                width: 150,
+                height: 150,
+                child: Image(
+                  image:AssetImage('images/2.PNG'),
+                ),
+                decoration: BoxDecoration(
+                    border :Border.all(
+                      width: 2,
+                      color: Colors.grey,
+                    )
+                ),
+              ),
+               ] ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 150,
+                        height: 150,
+                        child: Image(
+                          image:AssetImage('images/3.PNG'),
+                        ),
+                        decoration: BoxDecoration(
+                            border :Border.all(
+                              width: 2,
+                              color: Colors.grey,
+                            )
+                        ),
+                      ),
+                      Container(
+                        width: 150,
+                        height: 150,
+                        child: Image(
+                          image:AssetImage('images/4.PNG'),
+                        ),
+                        decoration: BoxDecoration(
+                            border :Border.all(
+                              width: 2,
+                              color: Colors.grey,
+                            )
+                        ),
+                      ),
+                    ] )
+              ],
+            ),
+            SizedBox(height: 40,),
+            // ]  )
+          ],),
+        )
+
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
+Container dot () {
+  return
+    Container(
+      width: 8,
+      height: 8,
+      decoration: BoxDecoration(
+          color: Colors.grey,
+          borderRadius: BorderRadius.circular(10)
+      ),
+    );
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+Container line () {
+  return
+    Container(
+      width: 1,
+      height: 35,
+      decoration: BoxDecoration(
+          color: Colors.grey,
+          borderRadius: BorderRadius.circular(10)
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+    );
+}
+
+Container fullCircll() {
+  return
+    Container(
+      width: 10,
+      height: 10,
+      decoration: BoxDecoration(
+          color: Colors.pink[100],
+          borderRadius: BorderRadius.circular(10)
+      ),
+    );
+}
+Container imptyCircll() {
+  return
+    Container(
+      width: 10,
+      height: 10,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: Colors.grey,
+          width: 2,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
 }
+//
+
+Drawer drawer()
+{ return Drawer(
+    backgroundColor: Colors.white,
+
+    child: ListView(children: [
+      UserAccountsDrawerHeader(
+          decoration: BoxDecoration(color: Colors.pink[100]),
+          currentAccountPicture: CircleAvatar(
+            backgroundImage: AssetImage('images/5.PNG'),backgroundColor: Colors.black12,
+          ),
+          accountName: Text("Alia"),
+          accountEmail: Text("alia3456@gmail.com")
+
+      ),
+      ListTile(
+        leading: Text('INFO',
+          style: TextStyle(
+            color: Colors.pink[100],
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      Container(
+
+        height: 2,
+        color: Colors.grey,
+      ),
+      ListTile(
+        leading: Icon(Icons.account_circle,color: Colors.grey,),
+        title: Text('D.O.B',style: TextStyle(fontSize: 20, color: Colors.pink[100]),),
+        subtitle: Text('April 23',style: TextStyle(color: Colors.grey)),
+      ),
+      ListTile(
+        leading: Icon(Icons.location_on,color: Colors.grey,),
+        title: Text('Address',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+        subtitle: Text('Al Rawda Street',style: TextStyle(color: Colors.grey)),
+      ),
+      ListTile(
+        leading: Icon(Icons.phone,color: Colors.grey,),
+        title: Text('Phone',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+        subtitle: Text('789123456',style: TextStyle(color: Colors.grey)),
+      ),
+      ListTile(
+        leading: Icon(Icons.email,color: Colors.grey,),
+        title: Text('Email',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+        subtitle: Text('alia3456@gmail.com',style: TextStyle(color: Colors.grey)),
+      ),
+      ListTile(
+        leading: Icon(Icons.screen_share_outlined,color: Colors.grey,),
+        title: Text('Website',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+        subtitle: Text('nothing',style: TextStyle(color: Colors.grey)),
+      ),
+
+
+      ListTile(
+        leading: Text('SOCIAL',
+          style: TextStyle(
+            color: Colors.pink[100],
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      Container(
+        height: 2,
+        color: Colors.grey,
+      ),
+      ListTile(
+        leading: Icon(color: Colors.grey,Icons.facebook,),
+        title: Text('facebook',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+        subtitle: Text('Alia',style: TextStyle(color: Colors.grey)),
+      ),
+      ListTile(
+        leading: Icon(Icons.maps_ugc_sharp,color: Colors.grey,),
+        title: Text('WhatsApp',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+        subtitle: Text('789123456',style: TextStyle(color: Colors.grey)),
+      ),
+      ListTile(
+        leading: Icon(Icons.camera_alt,color: Colors.grey,),
+        title: Text('Instagram',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+        subtitle: Text('alia mohammed',style: TextStyle(color: Colors.grey)),
+      ),
+
+
+      ListTile(
+        leading: Text('INTERESTS',
+          style: TextStyle(
+            color: Colors.pink[100],
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onTap: (){},
+      ),
+      Container(
+        height: 2,
+        color: Colors.grey,
+      ),
+      // Divider(color: Colors.brown,
+      // indent: 20,
+      // ),
+      ListTile(
+        leading: Icon(color: Colors.grey,Icons.photo_camera_outlined,),
+        title: Text('Photography',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+
+      ),
+      ListTile(
+        leading: Icon(Icons.keyboard_alt_outlined,color: Colors.grey,),
+        title: Text('Programming',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+
+      ),
+      ListTile(
+        leading: Icon(Icons.design_services,color: Colors.grey,),
+        title: Text('Design',style: TextStyle(fontSize: 20,color: Colors.pink[100]),),
+      ),
+    ],),
+  );}
